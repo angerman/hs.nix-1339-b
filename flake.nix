@@ -25,6 +25,7 @@
         packages:
           ${a}
         '';
+        modules = [{ packages.a.src = a.outPath; }];
       }; in {
         packages.b = proj.b.components.exes.b; 
       }
